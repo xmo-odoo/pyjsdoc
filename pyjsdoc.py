@@ -1088,7 +1088,7 @@ class FunctionDoc(CommentDoc):
         if '{' in ret and '}' in ret:
             if not '}  ' in ret:
                 # Ensure that name is empty
-                ret = ret.replace('} ', '}  ')
+                ret = re.sub(r'\}\s*', '}  ', ret)
             return ParamDoc(ret)
         if ret and type:
             return ParamDoc('{%s}  %s' % (type, ret))
