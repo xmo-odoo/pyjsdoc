@@ -260,7 +260,7 @@ def strip_stars(doc_comment):
     'This is a\n multiline comment.'
 
     """
-    return re.sub('\n\s*?\*\s*?', '\n', doc_comment[3:-2]).strip()
+    return re.sub('\n\s*?\*\s?', '\n', doc_comment[3:-2]).strip()
 
 def split_tag(section):
     """
